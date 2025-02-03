@@ -151,7 +151,7 @@ span {
     text-align: justify;
 }
 
-.service h2, .portfolio h2, .contact h2 {
+.service h2, .portfolio h2, .contact h2{
     font-size: 2.2rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -628,4 +628,13 @@ footer {
     object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
     border-radius: 1.2rem;
     max-width: 300px;
+  }
+
+  .about h2{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact h2{
+    font-size: 3.5em;
   }
