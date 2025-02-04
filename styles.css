@@ -161,6 +161,8 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .services-box {
@@ -169,6 +171,9 @@ span {
     justify-content: space-between;
     min-height: 25rem;
     margin-bottom: 1rem;
+    height: auto;
+    min-height: 100%;
+    
 }
 
 
@@ -198,7 +203,7 @@ span {
     letter-spacing: 0.1rem;
     /* n linhas*/
     display: -webkit-box;
-    -webkit-line-clamp: 8;
+    -webkit-line-clamp: 20;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -315,7 +320,7 @@ span {
     letter-spacing: 0.1rem;
     /* n linhas*/
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -387,12 +392,49 @@ footer {
     color: var(--bg-color-01);
 }
 
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color-02); 
+    z-index: 998; /* Fica atrás do menu */
+    display: none; /* Escondido por padrão */
+}
+
+/* Mostra o fundo quando o menu abrir */
+.menu-overlay.active {
+    display: block;
+}
+
+/* Certifica que o menu está acima do overlay */
+.nav-responsive {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%; /* Ajuste conforme necessário */
+    height: 100vh;
+    background: var(--bg-color);
+    z-index: 999; /* Fica acima do overlay */
+    transition: left 0.3s ease-in-out;
+}
+
+/* Exibir menu ao clicar */
+.nav-responsive.open {
+    left: 0;
+}
+
+
 /* Exibir o menu hambúrguer apenas em telas menores */
 .menu-hamburguer {
     display: block;
     cursor: pointer;
     z-index: 1000; /* Garante que fique acima de outros elementos */
-    position: relative;
+    position: fixed; /* Agora fica fixo na tela */
+    top: 20px;
+    right: 20px;
 }
 
 /* Barras do menu hambúrguer */
@@ -614,18 +656,18 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto; /* Ajusta a largura ao tamanho da imagem */
+    width: auto; 
     height: auto;
-    padding: 0; /* Remove qualquer espaçamento interno */
-    border: none; /* Remove bordas para uma aparência mais limpa */
-    background: none; /* Remove qualquer fundo */
+    padding: 0; 
+    border: none; 
+    background: none; 
     overflow: hidden;
   }
 
   .escritorio img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
+    object-fit: cover; 
     border-radius: 1.2rem;
     max-width: 300px;
   }
@@ -637,4 +679,7 @@ footer {
 
   .contact h2{
     font-size: 3.5em;
+  }
+  .escritorio p {
+    font-size: 1px;
   }
