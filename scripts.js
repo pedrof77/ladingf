@@ -19,3 +19,4 @@ overlay.addEventListener('click', () => {
 nav.addEventListener('click', (event) => {
     event.stopPropagation();
 });
+
